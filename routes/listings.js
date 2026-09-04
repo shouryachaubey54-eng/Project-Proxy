@@ -125,6 +125,7 @@ router.post("/booking/:id",async (req,res)=>{
     let user=await User.findById(userId);
     user.history.push(history1);
     await user.save();
+    req.flash("success","Bike Booked for You!!!");
     return res.redirect("/listings");
 })
 router.get("/history/user",async (req,res)=>{
