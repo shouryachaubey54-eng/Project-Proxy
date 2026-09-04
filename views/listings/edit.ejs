@@ -2,7 +2,7 @@
 <body>
     <div class="row">
         <div class="col-8">
-        <form method="post" action="http://localhost:8080/listings/<%=info._id%>?_method=PATCH" novalidate class="needs-validation">
+        <form method="post" action="/listings/<%=info._id%>?_method=PATCH" novalidate class="needs-validation">
         <div class="mb-3 mt-3">
             <label for="title" class="form-label">Title</label>
             <input type="text" name="listing[title]" value="<%=info.title%>" class="form-control" required>

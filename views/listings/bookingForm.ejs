@@ -1,123 +1,15 @@
-<!-- views/listings/bookingForm.ejs -->
+
  <% layout('./layouts/boilerplate') -%>
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book Listing</title>
-  
-  <!-- Flatpickr CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   
-  <!-- Google Font (Inter) -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"> -->
-
-  <!-- <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    }
-
-    body {
-      background-color: #f4f6f9;
-      color: #333;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 20px;
-    }
-
-    .booking-card {
-      background: #ffffff;
-      padding: 32px;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-      width: 100%;
-      max-width: 450px;
-    }
-
-    .booking-card h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #1a1a1a;
-      margin-bottom: 24px;
-      text-align: center;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: #4a5568;
-      margin-bottom: 8px;
-    }
-
-    .form-group input {
-      width: 100%;
-      padding: 12px 16px;
-      font-size: 0.95rem;
-      color: #2d3748;
-      background-color: #f8fafc;
-      border: 1px solid #cbd5e1;
-      border-radius: 8px;
-      outline: none;
-      transition: all 0.2s ease-in-out;
-    }
-
-    .form-group input:focus {
-      background-color: #ffffff;
-      border-color: #4f46e5;
-      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
-    }
-
-    .btn-submit {
-      width: 100%;
-      padding: 14px;
-      background-color: #4f46e5;
-      color: #ffffff;
-      font-size: 1rem;
-      font-weight: 600;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.2s ease, transform 0.1s ease;
-      margin-top: 10px;
-    }
-
-    .btn-submit:hover {
-      background-color: #4338ca;
-    }
-
-    .btn-submit:active {
-      transform: scale(0.98);
-    }
-
-    /* Flatpickr Theme Customization */
-    .flatpickr-calendar {
-      border-radius: 10px !important;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.12) !important;
-    }
-
-    .flatpickr-day.selected, .flatpickr-day.startRange, .flatpickr-day.endRange {
-      background: #4f46e5 !important;
-      border-color: #4f46e5 !important;
-    }
-  </style> -->
 </head>
 <body>
 
   <div class="booking-card">
     <h2>Complete Your Booking</h2>
 
-    <!-- Pass JSON data safely via script block -->
+   
     <script id="disabled-ranges-data" type="application/json">
       <%- JSON.stringify(disabledRanges) %>
     </script>
@@ -137,21 +29,21 @@
     </form>
   </div>
 
-  <!-- Flatpickr JS -->
+
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
   <script>
-    // 1. Fetch JSON safely from the script tag
+  
     const rawData = document.getElementById('disabled-ranges-data').textContent;
     const disabledRanges = JSON.parse(rawData);
 
-    // 2. Map date strings into Date objects
+  
     const disableList = disabledRanges.map(range => ({
       from: new Date(range.from),
       to: new Date(range.to)
     }));
 
-    // 3. Initialize Flatpickr
+    
     const startPicker = flatpickr("#bookingTime", {
       enableTime: true,
       dateFormat: "Y-m-d H:i",
