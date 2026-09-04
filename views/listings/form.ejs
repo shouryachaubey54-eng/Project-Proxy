@@ -1,0 +1,61 @@
+<% layout('./layouts/boilerplate') -%>
+<body>
+        <div class="row">
+            <div class="col-8">
+                <br>
+                <br>
+        <form method="post" action="http://localhost:8080/listings/new" novalidate class="needs-validation">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" name="listing[title]" placeholder="Title" class="form-control" required >
+            <div class="valid-feedback">Done</div>
+            <div class="invalid-feedback">Required</div>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <input required type="text" name="listing[description]" placeholder="Description" class="form-control">
+            <div class="valid-feedback">Done</div>
+            <div class="invalid-feedback">Required</div>
+        </div>
+        <div class="row">
+            <div class="mb-3 col-md-4">
+            <label for="price" class="form-label">Price</label>
+            <input type="text" name="listing[price]" placeholder="Price" class="form-control" required>
+            <div class="valid-feedback">Done</div>
+            <div class="invalid-feedback">Required</div>
+            </div>
+            <div class="mb-3 col-md-8">
+            <label for="country" class="form-label">Country</label>
+            <input type="text" name="listing[country]" placeholder="Country" class="form-control" required>
+            <div class="valid-feedback">Done</div>
+            <div class="invalid-feedback">Required</div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Image-Link/URL</label>
+            <input required type="text" name="listing[image]" placeholder="Image-Link/URL" class="form-control">
+            <div class="valid-feedback">Done</div>
+            <div class="invalid-feedback">Required</div>
+        </div>
+        <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" name="listing[location]" placeholder="Location" class="form-control" required>
+            <div class="valid-feedback">Done</div>
+            <div class="invalid-feedback">Required</div>
+        </div>
+        <div class="mb-3">
+        <label for="bikes" class="form-label">Category</label>
+        <select id="bikes" name="listing[category]" class="form-control" required>
+            <option value="all">All</option>
+            <option value="road">Road Bike</option>
+            <option value="mountain">Mountain Bike</option>
+            <option value="gravel">Gravel Bike</option>
+        </select>
+        </div>
+     
+        <button class="btn btn-danger mb-3">Submit</button>
+        <br>
+    </form>
+    </div>
+    </div>
+</body>      

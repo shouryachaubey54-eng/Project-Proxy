@@ -1,0 +1,309 @@
+body{
+    display:flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.container{
+    flex:1;
+}
+.container-fluid{
+    height:5rem;
+}
+.fa-paper-plane{
+    font-size:2rem;
+    color:#fe424d;
+}
+.nav-link{
+    color:#222222 !important;
+}
+.footer-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(229, 223, 223);
+}
+.term{
+    text-decoration: none;
+    color:#222222;
+}
+.term:hover{
+    text-decoration: underline;
+}
+.social-media{
+    font-size: 1.4rem;
+    
+}
+.social-media i{
+    color:black;
+}
+.company-info,.terms{
+    margin-top:10px;
+}
+.social-media{
+    margin-top:7px;
+}
+.card-img-top{
+    height:20rem;
+    width:100% !important;
+    object-fit:cover !important;
+    border-radius:1rem;
+}
+.card{
+    margin-bottom:30px;
+    border:none;
+}
+.card-body{
+    padding:0;
+}
+.listing-link{
+    text-decoration: none;
+}
+.card-img-overlay:hover{
+    background-color:white;
+    opacity:0.2;
+}
+/* review */
+.review-row{
+    display:flex;
+    flex-direction: row;
+}
+/*AI*/
+.custom-navbar {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  transition: all 0.3s ease;
+}
+
+/* Brand styling */
+.brand-logo {
+  font-size: 1.25rem;
+  color: #fe424d !important;
+  transition: transform 0.2s ease;
+}
+
+.brand-logo:hover {
+  transform: translateY(-1px);
+}
+
+.brand-icon {
+  font-size: 1.4rem;
+  transform: rotate(-10deg);
+}
+
+/* Navigation items hover effect */
+.custom-navbar .nav-link {
+  font-weight: 500;
+  color: #484848;
+  padding: 0.5rem 0.8rem !important;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+}
+
+.custom-navbar .nav-link:hover {
+  color: #fe424d;
+  background-color: rgba(254, 66, 77, 0.08);
+}
+
+.custom-navbar .nav-link.active {
+  color: #fe424d !important;
+  font-weight: 600;
+}
+
+.small-icon {
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+
+.cart-icon-btn {
+  color: #484848 !important;
+  border-radius: 50% !important;
+  width: 40px;
+  height: 40px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-icon-btn:hover {
+  color: #f59e0b !important; 
+  background-color: rgba(245, 158, 11, 0.1) !important;
+}
+
+.cart-badge {
+  font-size: 0.65rem;
+  padding: 0.25em 0.5em;
+}
+    .booking-card {
+      background: #ffffff;
+      padding: 32px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      width: 100%;
+      max-width: 450px;
+      margin-left:30%;
+    }
+
+    .booking-card h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 24px;
+      text-align: center!important;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #4a5568;
+      margin-bottom: 8px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px 16px;
+      font-size: 0.95rem;
+      color: #2d3748;
+      background-color: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .form-group input:focus {
+      background-color: #ffffff;
+      border-color: #4f46e5;
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 14px;
+      background-color: #4f46e5;
+      color: #ffffff;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+      margin-top: 10px;
+    }
+
+    .btn-submit:hover {
+      background-color: #4338ca;
+    }
+
+    .btn-submit:active {
+      transform: scale(0.98);
+    }
+    .flatpickr-calendar {
+      border-radius: 10px !important;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.12) !important;
+    }
+
+    .flatpickr-day.selected, .flatpickr-day.startRange, .flatpickr-day.endRange {
+      background: #4f46e5 !important;
+      border-color: #4f46e5 !important;
+    }
+
+  .main-card {
+    background: #ffffff;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .main-card:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  }
+
+  .img-container {
+    position: relative;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    overflow: hidden;
+  }
+
+  .img-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    font-weight: 600;
+  }
+
+  .spec-badge {
+    background: #f1f5f9;
+    color: #475569;
+    border: 1px solid #e2e8f0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 8px;
+  }
+
+  .form-card {
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+  }
+
+  /* Interactive Star Rating Styles */
+  .star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 6px;
+  }
+  .star-rating input {
+    display: none;
+  }
+  .star-rating label {
+    font-size: 2rem;
+    color: #cbd5e1;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.15s ease;
+  }
+  .star-rating label:hover,
+  .star-rating label:hover ~ label,
+  .star-rating input:checked ~ label {
+    color: #f59e0b;
+  }
+  .star-rating label:hover {
+    transform: scale(1.15);
+  }
+
+  /* Review Cards */
+  .review-card {
+    background: #ffffff;
+    border-radius: 14px;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease;
+  }
+  .review-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .btn-custom-primary {
+    background-color: #2563eb;
+    border: none;
+    color: white;
+  }
+  .btn-custom-primary:hover {
+    background-color: #1d4ed8;
+    color: white;
+  }
+  .search-class{
+    margin-right: 500px;
+  }

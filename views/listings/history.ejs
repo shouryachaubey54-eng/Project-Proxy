@@ -1,0 +1,121 @@
+<% layout('./layouts/boilerplate') -%>
+
+<div class="container my-5" style="max-width: 800px;">
+  
+  <!-- Header Section -->
+  <div class="d-flex align-items-center justify-content-between mb-5 pb-3 border-bottom">
+    <div>
+      <h2 class="fw-bold text-dark mb-1">Rental Activity Log</h2>
+      <p class="text-muted small mb-0">Track all your past, present, and upcoming bike bookings.</p>
+    </div>
+    <a href="/listings" class="btn btn-outline-primary btn-sm rounded-pill px-3">+ Book Another</a>
+  </div>
+
+  <% if (user1.history && user1.history.length > 0) { %>
+    <div class="position-relative ps-4 ms-2" style="border-left: 2px dashed #dee2e6;">
+      
+      <% for (let item of user1.history) { %>
+        <% 
+          const now = Date.now();
+          const isActive = now >= item.bookingTime && now <= item.returnTime;
+          const isUpcoming = now < item.bookingTime;
+          
+          let statusBadgeClass = "bg-secondary-subtle text-secondary";
+          let statusText = "Completed";
+          let dotColor = "bg-secondary";
+
+          if (isActive) {
+            statusBadgeClass = "bg-danger-subtle text-danger";
+            statusText = "Currently Active";
+            dotColor = "bg-danger";
+          } else if (isUpcoming) {
+            statusBadgeClass = "bg-warning-subtle text-dark";
+            statusText = "Upcoming";
+            dotColor = "bg-warning";
+          }
+        %>
+
+        <!-- Timeline Node -->
+        <div class="position-relative mb-4 pb-2">
+          
+          <!-- Colored Indicator Dot -->
+          <div class="position-absolute rounded-circle <%= dotColor %>" 
+               style="width: 14px; height: 14px; left: -32px; top: 20px; ring: 4px white;"></div>
+
+          <!-- Content Card -->
+          <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
+            
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <h5 class="fw-bold text-dark mb-0"><%= item.brand || "Bike Rental" %></h5>
+              <span class="badge <%= statusBadgeClass %> rounded-pill px-3 py-2 fw-semibold fs-7">
+                <%= statusText %>
+              </span>
+            </div>
+
+            <div class="row g-3 bg-light rounded-3 p-3 mx-0 align-items-center">
+              
+              <!-- Pickup -->
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center">
+                  <span class="fs-4 me-2">🛫</span>
+                  <div>
+                    <div class="text-muted text-uppercase fs-8 fw-bold">Pickup Time</div>
+                    <div class="fw-semibold text-dark fs-7">
+                      <%= new Date(item.bookingTime).toLocaleString('en-IN', { 
+                            day: 'numeric', 
+                            month: 'short', 
+                            year: 'numeric', 
+                            hour: '2-digit', 
+                            minute: '2-digit', 
+                            hour12: true 
+                          }) %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Return -->
+              <div class="col-sm-6">
+                <div class="d-flex align-items-center">
+                  <span class="fs-4 me-2">🛬</span>
+                  <div>
+                    <div class="text-muted text-uppercase fs-8 fw-bold">Return Time</div>
+                    <div class="fw-semibold text-dark fs-7">
+                      <%= new Date(item.returnTime).toLocaleString('en-IN', { 
+                            day: 'numeric', 
+                            month: 'short', 
+                            year: 'numeric', 
+                            hour: '2-digit', 
+                            minute: '2-digit', 
+                            hour12: true 
+                          }) %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <% if (item.mobileNumber) { %>
+              <div class="mt-3 text-muted small d-flex align-items-center">
+                <span class="me-2">📞</span>
+                <span>Contact Number: <strong>+91 <%= item.mobileNumber %></strong></span>
+              </div>
+            <% } %>
+
+          </div>
+        </div>
+      <% } %>
+
+    </div>
+  <% } else { %>
+    <!-- Empty State -->
+    <div class="text-center py-5 bg-white rounded-4 shadow-sm">
+      <div class="fs-1 mb-2">🚴‍♂️</div>
+      <h5 class="fw-bold text-dark">No Rentals Recorded Yet</h5>
+      <p class="text-muted fs-7 mb-4">When you book a bike, your history log will appear here.</p>
+      <a href="/listings" class="btn btn-primary rounded-pill px-4">Browse Marketplace</a>
+    </div>
+  <% } %>
+
+</div>
