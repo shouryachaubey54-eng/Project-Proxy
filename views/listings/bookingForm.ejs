@@ -15,18 +15,20 @@
     </script>
 
     <form action="/listings/booking/<%= id %>" method="POST" novalidate class="needs-validation">
-      <div class="form-group">
-        <label for="bookingTime">Start Date & Time</label>
-        <input type="text" id="bookingTime" name="listings[bookingTime]" required placeholder="Select Start Date" readonly>
-      </div>
+  <div class="form-group">
+    <label for="bookingTime">Start Date & Time</label>
+    <input type="text" id="bookingTime" name="listings[bookingTime]" required placeholder="Select Start Date" readonly class="form-control">
+    <div class="invalid-feedback">Please select a start date.</div>
+  </div>
 
-      <div class="form-group">
-        <label for="returnTime">End Date & Time</label>
-        <input type="text" id="returnTime" name="listings[returnTime]" required placeholder="Select End Date" readonly>
-      </div>
+  <div class="form-group">
+    <label for="returnTime">End Date & Time</label>
+    <input type="text" id="returnTime" name="listings[returnTime]" required placeholder="Select End Date" readonly class="form-control">
+    <div class="invalid-feedback">Please select an end date.</div>
+  </div>
 
-      <button type="submit" class="btn-submit">Confirm Booking</button>
-    </form>
+  <button type="submit" class="btn-submit">Confirm Booking</button>
+</form>
   </div>
 
 
