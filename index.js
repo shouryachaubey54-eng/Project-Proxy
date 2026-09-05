@@ -67,6 +67,9 @@ app.use((req,res,next)=>{
 const listing=require("./routes/listings.js");
 const review=require("./routes/review.js");
 const user=require("./routes/user.js");
+app.get("/",(req,res)=>{
+    res.redirect("/listings");
+})
 app.use("/listings",listing);
 app.use("/listings/:id/review",review);
 app.use("/user",user);
