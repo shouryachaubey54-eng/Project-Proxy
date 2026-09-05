@@ -14,7 +14,7 @@
       <%- JSON.stringify(disabledRanges) %>
     </script>
 
-    <form action="/listings/booking/<%= id %>" method="POST">
+    <form action="/listings/booking/<%= id %>" method="POST" novalidate class="needs-validation">
       <div class="form-group">
         <label for="bookingTime">Start Date & Time</label>
         <input type="text" id="bookingTime" name="listings[bookingTime]" required placeholder="Select Start Date" readonly>
