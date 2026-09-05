@@ -32,6 +32,8 @@
               <div class="d-flex align-items-center gap-2">
                 <%if(currentUser && !currentUser._id.equals(info.owner._id)){%>
                   <a href="/listings/booking/<%=info._id%>" class="btn btn-primary px-4 py-2 rounded-3 fw-semibold shadow-sm">Book Now</a>
+                <%}else if(!currentUser){%>
+                  <p>Login to Book Rides!!</p>
                 <%}%>
                 
                 
