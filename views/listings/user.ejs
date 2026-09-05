@@ -103,7 +103,7 @@
               <div class="col-md-6">
                 <div class="review-card h-100 p-4 border">
                   <div>
-                        <p>CreatedBy <%=currentUser.username%></p>
+                        <p>CreatedBy <%=reviews.owner.username%></p>
                       </div>
                   <div>
                     <div class="d-flex justify-content-between align-items-center mb-3">
@@ -118,7 +118,7 @@
                           <% } %>
                         <% } %>
                       </div>
-                      <% if(currentUser && currentUser._id.equals(reviews.owner)){ %>
+                      <% if(currentUser && currentUser._id.equals(reviews.owner._id)){ %>
                         <form method="POST" action="/listings/<%= info._id %>/review/<%= reviews._id %>?_method=DELETE">
                           <button class="btn btn-link text-danger p-0 border-0 text-decoration-none small opacity-75">Delete</button>
                         </form>

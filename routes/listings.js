@@ -28,8 +28,15 @@ router.get("/new",loginMiddleware,(req,res)=>{
 //particular place info
 router.get("/:id",wrapAsync(async (req,res,next)=>{
     let {id}=req.params;
-    let info=await Model1.findById(id).populate("review").populate("owner");
-    console.log(info);
+    let info=await Model1.findById(id).populate({
+            path: "review",   
+            populate: {
+                path: "owner"
+            }
+        });
+    for(reviews of info.review){
+        reviews.populate("owner");
+    }
     if(!info){
         req.flash("error","Page not exist!!!");
         return res.redirect("/listings");
@@ -78,7 +85,6 @@ router.post("/search/options",async (req,res)=>{
         return res.redirect("/listings");
     }
     let listings=await Model1.find({category:option});
-    console.log(listings);
     return res.render("listings/options.ejs",{listings});
 })
 router.get("/booking/:id",bookingMiddleware, async (req, res, next) => {
