@@ -33,7 +33,7 @@ router.get("/:id",wrapAsync(async (req,res,next)=>{
             populate: {
                 path: "owner"
             }
-        });
+        }).populate("owner");
     for(reviews of info.review){
         reviews.populate("owner");
     }
