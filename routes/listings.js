@@ -1,4 +1,7 @@
 const express=require("express");
+const multer  = require('multer');
+const {storage}=require("../cloudinary.js");
+const upload = multer({storage});
 const router=express.Router();
 let wrapAsync=require("../utilities/wrapAsync.js");
 let {listingSchema}=require("../schema.js");
@@ -44,9 +47,10 @@ router.get("/:id",wrapAsync(async (req,res,next)=>{
     res.render("listings/user.ejs",{info});
 }))
 //new user added
-router.post("/new",validateSchema,wrapAsync(async (req,res,next)=>{
+router.post("/new",upload.single('listing[image]'),validateSchema,wrapAsync(async (req,res,next)=>{
     const listing=req.body.listing;
     listing.owner=req.user._id;
+    listing.image=req.file.path;
     let user=new Model1(listing);
     await user.save();
     req.flash("success","New Data Registered!!!");
@@ -62,9 +66,10 @@ router.get("/:id/edit",loginMiddleware,wrapAsync(async (req,res,next)=>{
     return res.render("listings/edit.ejs",{info});
 }))
 //Update Listing.
-router.patch("/:id",loginMiddleware,validateSchema,wrapAsync(async (req,res)=>{
+router.patch("/:id",upload.single('listing[image]'),validateSchema,wrapAsync(async (req,res)=>{
     let {id}=req.params;
     let listing=req.body.listing;
+    listing.image=req.file.path;
     console.log(listing);
     await Model1.findByIdAndUpdate(id,{...listing});
     req.flash("success","Data Updated!!!");

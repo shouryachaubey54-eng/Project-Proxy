@@ -4,7 +4,7 @@
             <div class="col-8">
                 <br>
                 <br>
-        <form method="post" action="/listings/new" novalidate class="needs-validation">
+        <form method="post" action="/listings/new" enctype="multipart/form-data" novalidate class="needs-validation">
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
             <input type="text" name="listing[title]" placeholder="Title" class="form-control" required >
@@ -33,7 +33,7 @@
         </div>
         <div class="mb-3">
             <label for="image" class="form-label">Image-Link/URL</label>
-            <input required type="text" name="listing[image]" placeholder="Image-Link/URL" class="form-control">
+            <input required type="file" name="listing[image]" placeholder="Image-Link/URL" class="form-control">
             <div class="valid-feedback">Done</div>
             <div class="invalid-feedback">Required</div>
         </div>
